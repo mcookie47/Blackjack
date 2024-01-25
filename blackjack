@@ -1,0 +1,14 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	//initialize the cards 4 suits, 12 cards for each suit
+	int cards = 52;
+	int suits = 4;
+	int cardsInsuits = 12;
+
+
+
+}
