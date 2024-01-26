@@ -1,9 +1,7 @@
 // Blackjack using only 1 deck
 
 #include <iostream>
-//#include <ctime>
 #include <cstdlib>
-//removed <ctime> and added <cstdlib>
 
 using namespace std;
 
@@ -18,7 +16,7 @@ void card_deal1()
 	{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }
 	};
 
-	//srand((unsigned)time(0));
+	srand((unsigned)time(0));
 	int i = (rand() % 3);
 	int j = (rand() % 11);
 
@@ -28,22 +26,21 @@ void card_deal1()
 
 	switch (i) {
 	case 1:
-		cout << card_first[i][j] << " of spades" << endl;
+		cout << card_first[i][j] << " of spades";
 		break;
 	case 2:
-		cout << card_first[i][j] << " of clubs" << endl;
+		cout << card_first[i][j] << " of clubs";
 		break;
 	case 3:
-		cout << card_first[i][j] << " of diamonds" << endl;
+		cout << card_first[i][j] << " of diamonds";
 		break;
 	case 4:
-		cout << card_first[i][j] << " of hearts" << endl;
+		cout << card_first[i][j] << " of hearts";
 		break;
 	default:
-		cout << "Error" << endl;
+		cout << "Error";
 		break;
 	}
-	//cout << endl;
 }
 
 void card_deal2()
@@ -57,47 +54,48 @@ void card_deal2()
 	{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 }
 	};
 
-	//srand((unsigned)time(0));
-	int i = (rand() % 3);
-	int j = (rand() % 11);
+	srand((unsigned)time(0));
+	int n = (rand() % 3);
+	int m = (rand() % 11);
 
 	//cout << "i is " << i << " and j is " << j << endl;
 	//cout << card_second[i][j] << endl;
 
-	switch (i) {
+	switch (n) {
 	case 1:
-		cout << card_second[i][j] << " of spades" << endl;
+		cout << card_second[n][m] << " of spades";
 		break;
 	case 2:
-		cout << card_second[i][j] << " of clubs" << endl;
+		cout << card_second[n][m] << " of clubs";
 		break;
 	case 3:
-		cout << card_second[i][j] << " of diamonds" << endl;
+		cout << card_second[n][m] << " of diamonds";
 		break;
 	case 4:
-		cout << card_second[i][j] << " of hearts" << endl;
+		cout << card_second[n][m] << " of hearts";
 		break;
 	default:
-		cout << "Error" << endl;
+		cout << "Error";
 		break;
 	}
-	//cout << endl;
 }
 
 	int main(){
-		cout << "Your hand: ";
-		cout << "Card 1: ";
-		card_deal1();
-		cout << "Card 2: ";
-		card_deal2();
 
-		cout << "Dealer's hand: ";
-		cout << "Card 1: ";
+	// Deal 2 cards to the player
+		cout << "Your hand: ";
 		card_deal1();
-		cout << "Card 2: ";
+		cout << ", ";
 		card_deal2();
-	//	cout << " and ";
-	//	card_deal();
+		cout << endl;
+
+		// Deal 2 cards to the dealer
+		cout << "Dealer's hand: ";
+		card_deal1();
+		cout << ", ";
+		card_deal2();
+		cout << endl;
+
 		system("pause");
 
 		return 0;
