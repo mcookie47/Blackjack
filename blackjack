@@ -5,11 +5,11 @@
 
 using namespace std;
 
-int main()
+void card_deal()
 {
 	//initialize the cards 4 suits, 12 cards for each suit
 	//
-	int card[4][12] = {	
+	int card_first[4][12] = {
 	{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
 	{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
 	{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 },
@@ -17,34 +17,41 @@ int main()
 	};
 
 	srand((unsigned)time(0));
-	int i = (rand() % 4) + 1;
-	int j = (rand() % 12) + 1;
+	int i = (rand() % 3);
+	int j = (rand() % 11);
 
 
-	cout << card[i][j] << endl;
+	//cout << card_first[i][j] << endl;
 
 	switch (i) {
 	case 1:
-		cout << j << " of spades" << endl;
+		cout << card_first[i][j] << " of spades" << endl;
 		break;
 	case 2:
-		cout << j << " of clubs" << endl;
+		cout << card_first[i][j] << " of clubs" << endl;
 		break;
 	case 3:
-		cout << j << " of diamonds" << endl;
+		cout << card_first[i][j] << " of diamonds" << endl;
 		break;
 	case 4:
-		cout << j << " of hearts" << endl;
+		cout << card_first[i][j] << " of hearts" << endl;
 		break;
 	default:
 		cout << "Error" << endl;
 		break;
 	}
-	
-
-	system("pause");
-
-	return 0;
-
-	
+	cout << endl;
 }
+
+	int main(){
+		cout << "Your hand: ";
+
+		card_deal();
+
+	//	cout << " and ";
+	//	card_deal();
+		system("pause");
+
+		return 0;
+	}
+	
